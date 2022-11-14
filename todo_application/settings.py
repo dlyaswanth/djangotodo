@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5k#&(xyuh9$qgkson^oq@rn11kxdgs#)ir2s#g7clqx2mz(gie'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
      # 3rd party apps
     'drf_yasg',
-    # 'elasticapm.contrib.django',
+    'elasticapm.contrib.django',
     'django_cron',
     'rest_framework',
     'rest_framework.authtoken',
@@ -149,21 +149,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # APM CONFIGURATIONS
 
-# ELASTIC_APM = {
-#     # Set required service name. Allowed characters:
-#     # a-z, A-Z, 0-9, -, _, and space
-#     'SERVICE_NAME': 'django_application',
+ELASTIC_APM = {
+    # Set required service name. Allowed characters:
+    # a-z, A-Z, 0-9, -, _, and space
+    'SERVICE_NAME': 'django_application',
 
-#     # Use if APM Server requires a token
-#     'SECRET_TOKEN': '',
+    # Use if APM Server requires a token
+    'SECRET_TOKEN': '',
 
-#     # Set custom APM Server URL (default: http://localhost:8200)
-#     'SERVER_URL': 'http://localhost:8200',
+    # Set custom APM Server URL (default: http://localhost:8200)
+    'SERVER_URL': 'http://localhost:8200',
 
-#     'ENVIRONMENT': 'development',
+    'ENVIRONMENT': 'development',
 
-#     'DEBUG': True,
-# }
+    'DEBUG': True,
+}
 
 # To send performance metrics, add our tracing middleware...
 
